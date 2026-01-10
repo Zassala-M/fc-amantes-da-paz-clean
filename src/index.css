@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FC Amantes da Paz - Design System */
+/* Theme: Black & Gold - Elegant Football Club */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core Colors - Black & Gold */
+    --background: 0 0% 4%;
+    --foreground: 45 40% 90%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 45 40% 90%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 45 40% 90%;
+
+    /* Gold as Primary */
+    --primary: 43 74% 52%;
+    --primary-foreground: 0 0% 4%;
+
+    /* Dark Gold Secondary */
+    --secondary: 43 50% 25%;
+    --secondary-foreground: 45 40% 90%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    /* Accent Gold */
+    --accent: 43 74% 52%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 43 30% 20%;
+    --input: 0 0% 15%;
+    --ring: 43 74% 52%;
+
+    --radius: 0.75rem;
+
+    /* Custom Gold Gradient Tokens */
+    --gold-start: 43 74% 52%;
+    --gold-end: 43 60% 65%;
+    --gold-dark: 43 50% 35%;
+    
+    /* Shadows */
+    --shadow-gold: 0 4px 30px -5px hsl(43 74% 52% / 0.3);
+    --shadow-card: 0 8px 40px -10px hsl(0 0% 0% / 0.5);
+
+    /* Sidebar (if needed) */
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 45 40% 90%;
+    --sidebar-primary: 43 74% 52%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 45 40% 90%;
+    --sidebar-border: 43 30% 15%;
+    --sidebar-ring: 43 74% 52%;
+  }
+
+  .dark {
+    /* Same as root - dark by default */
+    --background: 0 0% 4%;
+    --foreground: 45 40% 90%;
+    --card: 0 0% 8%;
+    --card-foreground: 45 40% 90%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 45 40% 90%;
+    --primary: 43 74% 52%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 43 50% 25%;
+    --secondary-foreground: 45 40% 90%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 43 74% 52%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 43 30% 20%;
+    --input: 0 0% 15%;
+    --ring: 43 74% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    @apply font-semibold tracking-wide uppercase;
+  }
+}
+
+@layer components {
+  /* Gold Gradient Text */
+  .text-gold-gradient {
+    @apply bg-gradient-to-r from-primary via-[hsl(43,60%,65%)] to-primary bg-clip-text text-transparent;
+  }
+
+  /* Gold Border Glow */
+  .border-gold-glow {
+    @apply border border-primary/30;
+    box-shadow: 0 0 20px -5px hsl(43 74% 52% / 0.3);
+  }
+
+  /* Card Hover Effect */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Gold Shimmer Animation */
+  .gold-shimmer {
+    background: linear-gradient(
+      110deg,
+      hsl(43 74% 52%) 0%,
+      hsl(43 60% 70%) 45%,
+      hsl(43 74% 52%) 55%,
+      hsl(43 60% 70%) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: -100% 0; }
+    50% { background-position: 100% 0; }
+  }
+
+  /* Stat Card */
+  .stat-card {
+    @apply bg-card rounded-xl p-6 border border-border/50 relative overflow-hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent;
+  }
+
+  /* Player Card */
+  .player-card {
+    @apply bg-card rounded-xl overflow-hidden border border-border/30 transition-all duration-300;
+  }
+
+  .player-card:hover {
+    @apply border-primary/50;
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Match Card */
+  .match-card {
+    @apply bg-card rounded-xl p-6 border border-border/30 transition-all duration-300;
+  }
+
+  .match-card:hover {
+    @apply border-primary/40 bg-card/80;
+  }
+
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 4%) 0%,
+      hsl(0 0% 8%) 50%,
+      hsl(43 30% 8%) 100%
+    );
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      hsl(0 0% 4% / 0.8) 100%
+    );
+  }
+
+  /* Navigation Styles */
+  .nav-link {
+    @apply relative text-muted-foreground hover:text-primary transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-primary;
+  }
+
+  /* Button Variants */
+  .btn-gold {
+    @apply bg-gradient-to-r from-primary to-[hsl(43,60%,55%)] text-primary-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+
+  .btn-gold:hover {
+    @apply shadow-lg scale-[1.02];
+    box-shadow: var(--shadow-gold);
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-lg transition-all duration-300;
+  }
+
+  /* Gallery Image */
+  .gallery-image {
+    @apply relative overflow-hidden rounded-lg aspect-square;
+  }
+
+  .gallery-image img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+  }
+
+  .gallery-image:hover img {
+    @apply scale-110;
+  }
+
+  .gallery-image::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .gallery-image:hover::after {
+    @apply opacity-100;
+  }
+
+  /* Section Divider */
+  .section-divider {
+    @apply w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto;
+  }
+
+  /* Badge Gold */
+  .badge-gold {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30;
+  }
+
+  /* Rank Number */
+  .rank-number {
+    @apply text-4xl font-bold text-primary/30;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  /* Scrollbar Custom */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer utilities {
+  /* Animation Delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+
+  /* Fade In Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Pulse Glow */
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px -5px hsl(43 74% 52% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px -5px hsl(43 74% 52% / 0.5);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+}
