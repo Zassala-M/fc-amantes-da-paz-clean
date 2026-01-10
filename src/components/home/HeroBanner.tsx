@@ -1,6 +1,9 @@
 import { Trophy, ChevronDown } from "lucide-react";
 import { clubInfo } from "@/data/clubData";
 
+import { Link } from "react-router-dom";
+
+
 const HeroBanner = () => {
   const scrollToContent = () => {
     const content = document.getElementById("main-content");
@@ -30,8 +33,8 @@ const HeroBanner = () => {
         {/* Logo */}
         <div className="mb-8 animate-fade-in-up animation-delay-100">
           <div className="w-28 h-28 md:w-36 md:h-36 mx-auto rounded-full bg-gradient-to-br from-primary to-gold-dark flex items-center justify-center shadow-2xl animate-pulse-glow">
-           {/*<Trophy className="w-14 h-14 md:w-18 md:h-18 text-primary-foreground" />*/}
-            <img src="/logo.JPG" alt="Logo Clube"  className="w-full h-full rounded-full object-cover"/>
+            {/*<Trophy className="w-14 h-14 md:w-18 md:h-18 text-primary-foreground" />*/}
+            <img src="/logo.JPG" alt="Logo Clube" className="w-full h-full rounded-full object-cover" />
           </div>
         </div>
 
@@ -47,12 +50,19 @@ const HeroBanner = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
-          <a href="/jogos" className="btn-gold">
+          {/*<a href="/jogos" className="btn-gold">
             Ver Próximos Jogos
           </a>
           <a href="/sobre" className="btn-outline-gold">
             Conhecer o Clube
-          </a>
+          </a>*/}
+          <Link to="/jogos" className="btn-gold">
+            Ver Próximos Jogos
+          </Link>
+
+          <Link to="/sobre" className="btn-outline-gold">
+            Conhecer o Clube
+          </Link>
         </div>
 
         {/* Scroll Indicator */}
