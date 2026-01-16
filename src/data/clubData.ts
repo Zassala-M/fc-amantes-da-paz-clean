@@ -142,12 +142,12 @@ export const nextMatch = {
 export const lastResult = {
   date: "2025-12-21",
   homeTeam: "FC Amantes da Paz",
-  awayTeam: "Massanga FC",
+  awayTeam: "VG - Sagrada Esperança",
   homeScore: 0,
-  awayScore: 2,
+  awayScore: 0,
   scorers: [""],
   assists: [""],
-  mvp: "Kiki"
+  mvp: "Mano Basto"
 };
 
 // JOGADOR DA SEMANA
@@ -183,11 +183,13 @@ export interface Result {
 }
 
 export const results: Result[] = [
-  { id: 1, date: "2025-12-21", homeTeam: "FC Amantes da Paz", awayTeam: "Massanga FC", homeScore: 0, awayScore: 2, scorers: [""], assists: [""], mvp: "Dacamassita", competition: "Jogo Amistoso" },
-  { id: 2, date: "2025-12-14", homeTeam: "Bipola FC", awayTeam: "FC Amantes da Paz", homeScore: 5, awayScore: 0, scorers: [""], assists: [""], mvp: "Leo Branco", competition: "Jogo Amistoso" },
-  { id: 3, date: "2025-12-7", homeTeam: "FC Amantes da Paz", awayTeam: "SC Vitória", homeScore: 2, awayScore: 1, scorers: ["Dacamassita (2)"], assists: ["Zemura (2)"], mvp: "Dacamassita", competition: "Jogo Amistoso" },
-  { id: 4, date: "2025-11-30", homeTeam: "Real Bairro", awayTeam: "FC Amantes da Paz", homeScore: 1, awayScore: 1, scorers: ["André"], assists: ["Adriano"], mvp: "Manucho", competition: "Jogo Amistoso" },
-  { id: 5, date: "2025-11-23", homeTeam: "Arsenal", awayTeam: "FC Amantes da Paz", homeScore: 2, awayScore: 3, scorers: ["Dacamassita", "Matross", "Adriano"], assists: ["Matross", "Madruga", "Manucho"], mvp: "Adriano", competition: "Jogo Amistoso" }
+  { id: 1, date: "2026-01-11", homeTeam: "FC Amantes da Paz", awayTeam: "VG - Sagrada Esperança", homeScore: 0, awayScore: 0, scorers: [""], assists: [""], mvp: "Mano Basto", competition: "Jogo Amistoso" },
+  
+  { id: 2, date: "2025-12-21", homeTeam: "FC Amantes da Paz", awayTeam: "Massanga FC", homeScore: 0, awayScore: 2, scorers: [""], assists: [""], mvp: "Dacamassita", competition: "Jogo Amistoso" },
+  { id: 3, date: "2025-12-14", homeTeam: "Bipola FC", awayTeam: "FC Amantes da Paz", homeScore: 5, awayScore: 0, scorers: [""], assists: [""], mvp: "Leo Branco", competition: "Jogo Amistoso" },
+  { id: 4, date: "2025-12-7", homeTeam: "FC Amantes da Paz", awayTeam: "SC Vitória", homeScore: 2, awayScore: 1, scorers: ["Dacamassita (2)"], assists: ["Zemura (2)"], mvp: "Dacamassita", competition: "Jogo Amistoso" },
+  { id: 5, date: "2025-11-30", homeTeam: "Real Bairro", awayTeam: "FC Amantes da Paz", homeScore: 1, awayScore: 1, scorers: ["André"], assists: ["Adriano"], mvp: "Manucho", competition: "Jogo Amistoso" },
+  { id: 6, date: "2025-11-23", homeTeam: "Arsenal", awayTeam: "FC Amantes da Paz", homeScore: 2, awayScore: 3, scorers: ["Dacamassita", "Matross", "Adriano"], assists: ["Matross", "Madruga", "Manucho"], mvp: "Adriano", competition: "Jogo Amistoso" }
 ];
 
 // PRÉMIOS E DESTAQUES
